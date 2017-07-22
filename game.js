@@ -86,6 +86,8 @@ function game_over() {
     is_game_started = false;
     is_alive = false;
     start_animation_flag = false;
+    disable_button("start_button", true);
+    disable_button("stop_button", true);
     pause_game();
     msg = document.createElement("img");
     msg.setAttribute('src', "images/gameover.png")
@@ -172,7 +174,7 @@ function stop_game() {
     }
 }
 
-
+/*Animates the "Level Up" label.*/
 function animate_label() {
     var level_up = document.getElementById("level_up");
     level_up_position -= 4;
@@ -238,6 +240,9 @@ function generate_timer() {
 /*Start the game when 'Start' button is clicked.*/
 function start_game() {
     "use strict";
+    if(is_game_started == true || !is_alive) {
+        return;
+    }
     is_game_started = true;
     disable_button("pause_button", false);
     disable_button("stop_button", false);
@@ -262,6 +267,7 @@ function init_game() {
     for(i = 0; i < running_cars.length; i++) {
         running_cars[i].parentNode.removeChild(running_cars[i]);
     }
+    disable_button("start_button", false);
     game_level = 1;
     game_duration = 0;
     elapsed_minutes = elapsed_seconds = 0;
