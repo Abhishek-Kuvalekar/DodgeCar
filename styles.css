@@ -1,0 +1,39 @@
+body {
+    background: url("images/grass/grass1.jpeg");
+}
+
+#road {
+    height: 665px;
+    width: 500px;
+    margin-left: 350px;
+    position: absolute;
+    top: 0px;
+    border: thick solid black;
+}
+
+#user_car {
+    position: absolute;
+    left: 400px;
+    top: 510px;
+    height: 100px;
+    width: 60px;
+}
+
+#start_button {
+    width: 95px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+#pause_button {
+    width: 95px;
+    position: absolute;
+    top: 45px;
+    left: 5px;
+}
+#stop_button {
+    width: 95px;
+    position: absolute;
+    top: 85px;
+    left: 5px;
+}
